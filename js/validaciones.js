@@ -6,7 +6,7 @@
    - Contacto
    - Registro
 
-   Idea general (para explicarla al profesor):
+   Idea general:
    1. Cada campo tiene un <span class="mensaje-error"> al lado,
       pensado para mostrar el error JUSTO donde ocurre (no un
       alert() genérico).
@@ -16,10 +16,9 @@
    3. Los dominios de correo permitidos (@duoc.cl,
       @profesor.duoc.cl y @gmail.com) están definidos una sola
       vez en DOMINIOS_PERMITIDOS para no repetir el arreglo en
-      cada validación.
-   ========================================================= */
+      cada validación. */
 
-const DOMINIOS_PERMITIDOS = ["duoc.cl", "profesor.duoc.cl", "gmail.com"];
+const DOMINIOS_PERMITIDOS = ["duocuc.cl", "profesor.duoc.cl", "gmail.com"];
 
 /**
  * Muestra un mensaje de error debajo del campo indicado y le
@@ -107,15 +106,26 @@ function inicializarValidacionLogin() {
     }
 
     const mensajeFormulario = document.getElementById("mensaje-login");
-    if (formularioValido) {
-      // No hay backend real: simulamos el "inicio de sesión"
-      // guardando el nombre de usuario para la sesión de la demo.
-      mensajeFormulario.textContent = "¡Bienvenida/o! Inicio de sesión exitoso.";
-      mensajeFormulario.className = "mensaje-formulario exito";
-    } else {
-      mensajeFormulario.textContent = "Revisa los campos marcados en rojo.";
-      mensajeFormulario.className = "mensaje-formulario fallo";
-    }
+
+if (formularioValido) {
+
+  mensajeFormulario.textContent =
+    "¡Bienvenida/o! Inicio de sesión exitoso.";
+
+  mensajeFormulario.className =
+    "mensaje-formulario exito";
+
+  // Enviamos los datos válidos a login.js
+  procesarLogin(correo, clave);
+
+} else {
+
+  mensajeFormulario.textContent =
+    "Revisa los campos marcados en rojo.";
+
+  mensajeFormulario.className =
+    "mensaje-formulario fallo";
+}
   });
 }
 
@@ -265,6 +275,21 @@ function inicializarSelectRegionComuna() {
 function inicializarValidacionRegistro() {
   const formulario = document.getElementById("form-registro");
   if (!formulario) return;
+
+  const campoRun = document.getElementById("registro-run");
+const ayudaRun = document.getElementById("ayuda-run");
+
+if (campoRun && ayudaRun) {
+
+  campoRun.addEventListener("focus", () => {
+    ayudaRun.classList.add("visible");
+  });
+
+  campoRun.addEventListener("blur", () => {
+    ayudaRun.classList.remove("visible");
+  });
+  
+}
 
   inicializarSelectRegionComuna();
 

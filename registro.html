@@ -33,11 +33,23 @@
         <form id="form-registro" class="form-tienda" novalidate style="max-width:600px;">
 
           <div class="campo">
-            <label for="registro-run">RUN</label>
-            <input type="text" id="registro-run" name="run"
-                   placeholder="12345678-9" maxlength="10">
-            <span id="error-registro-run" class="mensaje-error"></span>
-          </div>
+                <label for="registro-run">RUN</label>
+                <div class="campo">
+                  <input
+                    type="text"
+                    id="registro-run"
+                    name="run"
+                    placeholder="Ej: 19011022K"
+                  >
+
+                  <small id="ayuda-run" class="ayuda-campo">
+                    Ingresa tu RUN sin puntos ni guion.
+                  </small>
+
+                  <span id="error-registro-run" class="mensaje-error"></span>
+                </div>
+
+                
 
           <div class="campo">
             <label for="registro-nombre">Nombre</label>
