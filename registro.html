@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta | Secret Sweet Maid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="row">
+
+    <header class="col-2">
+      <nav class="menu-principal">
+        <h1 class="logo-nombre">Secret Sweet Maid</h1>
+        <ul class="menu-lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito <span id="contador-carrito" class="contador-carrito">0</span></a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="activo">Registrarme</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="col-10 contenido-principal">
+      <section id="registro">
+        <h2>Crear cuenta nueva</h2>
+
+        <p id="mensaje-registro" class="mensaje-formulario" style="display:none;"></p>
+
+        <form id="form-registro" class="form-tienda" novalidate style="max-width:600px;">
+
+          <div class="campo">
+            <label for="registro-run">RUN</label>
+            <input type="text" id="registro-run" name="run"
+                   placeholder="12345678-9" maxlength="10">
+            <span id="error-registro-run" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-nombre">Nombre</label>
+            <input type="text" id="registro-nombre" name="nombre"
+                   autocomplete="given-name" maxlength="100">
+            <span id="error-registro-nombre" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-apellidos">Apellidos</label>
+            <input type="text" id="registro-apellidos" name="apellidos"
+                   autocomplete="family-name" maxlength="100">
+            <span id="error-registro-apellidos" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-correo">Correo electrónico</label>
+            <input type="email" id="registro-correo" name="correo"
+                   autocomplete="email" maxlength="100"
+                   placeholder="nombre@duoc.cl">
+            <span id="error-registro-correo" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-fecha">Fecha de nacimiento</label>
+            <input type="date" id="registro-fecha" name="fechaNacimiento"
+                   autocomplete="bday">
+            <span id="error-registro-fecha" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-tipo">Tipo de usuario</label>
+            <select id="registro-tipo" name="tipoUsuario">
+              <option value="">Selecciona una opción</option>
+              <option value="cliente">Cliente</option>
+              <option value="vendedor">Vendedor / miembro de la comunidad</option>
+            </select>
+            <span id="error-registro-tipo" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-region">Región</label>
+            <select id="registro-region" name="region">
+              <option value="">Selecciona una región</option>
+              <option value="metropolitana">Región Metropolitana</option>
+              <option value="valparaiso">Región de Valparaíso</option>
+              <option value="biobio">Región del Biobío</option>
+            </select>
+            <span id="error-registro-region" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-comuna">Comuna</label>
+            <!-- Se llena dinámicamente con JS según la región elegida
+                 (esto cumple la parte de "sugerencias" de la pauta) -->
+            <select id="registro-comuna" name="comuna">
+              <option value="">Primero elige una región</option>
+            </select>
+            <span id="error-registro-comuna" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="registro-direccion">Dirección</label>
+            <input type="text" id="registro-direccion" name="direccion"
+                   autocomplete="street-address" maxlength="150">
+            <span id="error-registro-direccion" class="mensaje-error"></span>
+          </div>
+
+          <button type="submit" class="btn-enviar">Crear cuenta</button>
+        </form>
+      </section>
+
+      <footer>
+        <p>Secret Sweet Maid &copy; 2026 · <a href="contacto.html">Contáctanos</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script>
+    document.getElementById("form-registro").addEventListener("submit", () => {
+      document.getElementById("mensaje-registro").style.display = "block";
+    });
+  </script>
+</body>
+</html>

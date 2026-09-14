@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Sweet Maid | Tienda Online</title>
+
+  <!-- Animate.css: la misma librería de animaciones que usamos en el trabajo anterior -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- CSS EXTERNO y REUTILIZABLE: se enlaza igual en todas las páginas -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Toda la página vive dentro de una grilla de 12 columnas -->
+  <div class="row">
+
+    <!-- ============ MENÚ (2 columnas) ============
+         Es <nav> porque semánticamente es la navegación
+         principal del sitio (requisito de HTML semántico). -->
+    <header class="col-2">
+      <nav class="menu-principal">
+        <h1 class="logo-nombre">Secret Sweet Maid</h1>
+        <ul class="menu-lista">
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito <span id="contador-carrito" class="contador-carrito">0</span></a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Registrarme</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--**** CONTENIDO PRINCIPAL (10 columnas) **** -->
+    <main class="col-10 contenido-principal">
+
+      <!-- Bienvenida -->
+      <section id="inicio">
+        <h2 class="animate__animated animate__fadeIn">Bienvenida a Secret Sweet Maid</h2>
+        <p>
+          Secret Sweet Maid es un proyecto dedicado a la cultura maid, inspirado en el anime 
+          y la cultura otaku de Akihabara, Japón. Los maid cafés son espacios donde las camareras 
+          reciben y atienden amablemente a sus invitados, creando una experiencia ambientada en 
+          un mundo de fantasía, diversión e inocencia.
+
+          A través de nuestras presentaciones y actividades, buscamos compartir nuestra pasión por 
+          esta cultura y crear momentos entretenidos para quienes nos acompañan. En nuestra tienda 
+          online podrás encontrar stickers, photocards y productos inspirados en nuestras integrantes, 
+          llevando un pedacito de Secret Sweet Maid contigo.
+          
+        </p>
+        <!-- Botón operativo: lleva directo al catálogo -->
+        <a href="productos.html" class="acceso" style="display:inline-block; max-width:220px;">
+          Ver catálogo completo
+        </a>
+      </section>
+
+      <!-- Imagen principal con background-image (igual que en el trabajo anterior) -->
+      <section aria-label="Imagen destacada">
+        <div id="imagen-principal"></div>
+      </section>
+
+      <!-- Video embebido -->
+<section id="video">
+    <h2>Conoce nuestra última presentación</h2>
+
+    <iframe 
+        width="100%" 
+        height="280"
+        src="https://www.youtube.com/embed/XWPRhyQvgMc"
+        title="Presentación Secret Sweet Maid"
+        style="border-radius:10px; border:1px solid #ffc9de;"
+        allowfullscreen>
+    </iframe>
+</section>
+
+      <!-- Productos destacados (3 tarjetas fijas a modo de vitrina) -->
+      <section id="destacados">
+        <h2>Productos destacados</h2>
+        <div class="row">
+          <div class="col-4">
+            <article class="card">
+              <div class="card-img" style="background-image: url('imgs/producto1.jpg');"></div>
+              <h3>Diadema Maid Clásica</h3>
+              <p class="precio">$6.990</p>
+              <a href="productos.html">Ver en catálogo</a>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card">
+              <div class="card-img" style="background-image: url('imgs/producto2.jpg');"></div>
+              <h3>Delantal Sweet Lolita</h3>
+              <p class="precio">$12.990</p>
+              <a href="productos.html">Ver en catálogo</a>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card">
+              <div class="card-img" style="background-image: url('imgs/producto5.jpg');"></div>
+              <h3>Taza Secret Sweet Maid</h3>
+              <p class="precio">$7.990</p>
+              <a href="productos.html">Ver en catálogo</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer informativo dentro de <main>, exigido por la pauta -->
+      <footer>
+        <p>Secret Sweet Maid &copy; 2026 · <a href="contacto.html">Contáctanos</a></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Los scripts van al final del body para que el HTML ya
+       exista cuando el JS intenta buscar elementos por id -->
+  <script src="js/main.js"></script>
+</body>
+</html>
