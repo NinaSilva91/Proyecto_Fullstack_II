@@ -23,7 +23,7 @@ const productos = [
         stock: 10,
         categoria: "shikku",
         tipo: "sticker-xl",
-        imagen: "imgs/shikku-sticker-xl.jpg" // IMAGEN: sticker XL de Shikku
+        imagen: "imgs/shikkuXL.png"
     },
 
     {
@@ -34,7 +34,7 @@ const productos = [
         stock: 10,
         categoria: "shikku",
         tipo: "photocard",
-        imagen: "imgs/shikku-photocard.jpg" // IMAGEN: photocard de Shikku
+        imagen: "imgs/photocardShikku.JPG"
     },
 
     {
@@ -45,7 +45,7 @@ const productos = [
         stock: 10,
         categoria: "shikku",
         tipo: "chapita",
-        imagen: "imgs/shikku-chapita.jpg" // IMAGEN: chapita de Shikku
+        imagen: "imgs/chapaShikku.png" 
     },
 
 
@@ -72,7 +72,7 @@ const productos = [
         stock: 10,
         categoria: "fumi",
         tipo: "sticker-xl",
-        imagen: "imgs/fumi-sticker-xl.jpg" // IMAGEN: sticker XL de Fumi
+        imagen: "imgs/fumiXL.png"
     },
 
     {
@@ -83,7 +83,7 @@ const productos = [
         stock: 10,
         categoria: "fumi",
         tipo: "photocard",
-        imagen: "imgs/fumi-photocard.jpg" // IMAGEN: photocard de Fumi
+        imagen: "imgs/photocardFumi.JPG" // IMAGEN: photocard de Fumi
     },
 
     {
@@ -94,7 +94,7 @@ const productos = [
         stock: 10,
         categoria: "fumi",
         tipo: "chapita",
-        imagen: "imgs/fumi-chapita.jpg" // IMAGEN: chapita de Fumi
+        imagen: "imgs/chapaFumi.png"
     },
 
 
@@ -110,7 +110,7 @@ const productos = [
         stock: 10,
         categoria: "michiru",
         tipo: "sticker",
-        imagen: "imgs/michiru.png" // IMAGEN: sticker de Michiru
+        imagen: "imgs/michiru.png"
     },
 
     {
@@ -121,7 +121,7 @@ const productos = [
         stock: 10,
         categoria: "michiru",
         tipo: "sticker-xl",
-        imagen: "imgs/michiru-sticker-xl.jpg" // IMAGEN: sticker XL de Michiru
+        imagen: "imgs/michiruXL.png" 
     },
 
     {
@@ -132,7 +132,7 @@ const productos = [
         stock: 10,
         categoria: "michiru",
         tipo: "photocard",
-        imagen: "imgs/michiru-photocard.jpg" // IMAGEN: photocard de Michiru
+        imagen: "imgs/photocardMichiru.JPG" 
     },
 
     {
@@ -143,7 +143,7 @@ const productos = [
         stock: 10,
         categoria: "michiru",
         tipo: "chapita",
-        imagen: "imgs/michiru-chapita.jpg" // IMAGEN: chapita de Michiru
+        imagen: "imgs/chapaMichiru.png" 
     },
 
 
@@ -170,7 +170,7 @@ const productos = [
         stock: 10,
         categoria: "bekyuu",
         tipo: "sticker-xl",
-        imagen: "imgs/bekyuu-sticker-xl.jpg" // IMAGEN: sticker XL de Bekyuu
+        imagen: "imgs/bekyuuXL.png" 
     },
 
     {
@@ -181,7 +181,7 @@ const productos = [
         stock: 10,
         categoria: "bekyuu",
         tipo: "photocard",
-        imagen: "imgs/bekyuu-photocard.jpg" // IMAGEN: photocard de Bekyuu
+        imagen: "imgs/photocardBekyuu.JPG" 
     },
 
     {
@@ -192,9 +192,7 @@ const productos = [
         stock: 10,
         categoria: "bekyuu",
         tipo: "chapita",
-        imagen: "imgs/bekyuu-chapita.jpg" // IMAGEN: chapita de Bekyuu
-    },
-
+        imagen: "imgs/chapaBekyuu.png"},
 
     // ==================================================
     // RITSU
@@ -219,7 +217,7 @@ const productos = [
         stock: 10,
         categoria: "ritsu",
         tipo: "sticker-xl",
-        imagen: "imgs/ritsu-sticker-xl.jpg" // IMAGEN: sticker XL de Ritsu
+        imagen: "imgs/ritsuXL.png" 
     },
 
     {
@@ -230,7 +228,7 @@ const productos = [
         stock: 10,
         categoria: "ritsu",
         tipo: "photocard",
-        imagen: "imgs/ritsu-photocard.jpg" // IMAGEN: photocard de Ritsu
+        imagen: "imgs/photocardRitsu.JPG"
     },
 
     {
@@ -241,7 +239,7 @@ const productos = [
         stock: 10,
         categoria: "ritsu",
         tipo: "chapita",
-        imagen: "imgs/ritsu-chapita.jpg" // IMAGEN: chapita de Ritsu
+        imagen: "imgs/chapaRitsu.png"
     },
 
 
@@ -268,7 +266,7 @@ const productos = [
         stock: 10,
         categoria: "aimi",
         tipo: "sticker-xl",
-        imagen: "imgs/aimi-sticker-xl.jpg" // IMAGEN: sticker XL de Aimi
+        imagen: "imgs/aimiXL.png"
     },
 
     {
@@ -279,18 +277,18 @@ const productos = [
         stock: 10,
         categoria: "aimi",
         tipo: "photocard",
-        imagen: "imgs/aimi-photocard.jpg" // IMAGEN: photocard de Aimi
+        imagen: "imgs/photocardAimi.JPG"
     },
 
     {
-        codigo: "AIM004",
-        nombre: "Chapita Aimi",
-        descripcion: "Chapita de Aimi.",
-        precio: 1000,
-        stock: 10,
-        categoria: "aimi",
-        tipo: "chapita",
-        imagen: "imgs/aimi-chapita.jpg" // IMAGEN: chapita de Aimi
+    codigo: "AIM004",
+    nombre: "Chapita Aimi",
+    descripcion: "Chapita de Aimi.",
+    precio: 1000,
+    stock: 10,
+    categoria: "aimi",
+    tipo: "chapita",
+    imagen: "imgs/chapaAimi.png"
     },
 
 
@@ -306,7 +304,7 @@ const productos = [
         stock: 10,
         categoria: "grupal",
         tipo: "llavero",
-        imagen: "imgs/llavero-ssm.jpg" // IMAGEN: llavero SSM
+        imagen: "imgs/llavero3D.png"
     },
 
     {
@@ -317,7 +315,7 @@ const productos = [
         stock: 10,
         categoria: "grupal",
         tipo: "gashapon",
-        imagen: "imgs/gashapon.jpg" // IMAGEN: gashapon
+        imagen: "imgs/gashapon.png"
     },
 
     {
@@ -328,7 +326,7 @@ const productos = [
         stock: 10,
         categoria: "grupal",
         tipo: "bolsa",
-        imagen: "imgs/bolsa-sorpresa.jpg" // IMAGEN: bolsa sorpresa
+        imagen: "imgs/sobresSorpresa.png"
     },
 
     {
@@ -339,7 +337,7 @@ const productos = [
         stock: 10,
         categoria: "grupal",
         tipo: "cartas",
-        imagen: "imgs/cartas-pokemaid.jpg" // IMAGEN: cartas Pokemaid
+        imagen: "imgs/cartasPokemaid.png"
     },
 
     {
@@ -350,7 +348,7 @@ const productos = [
         stock: 10,
         categoria: "grupal",
         tipo: "separador",
-        imagen: "imgs/separador.jpg" // IMAGEN: separador de libro
+        imagen: "imgs/marcaPaginas.png"
     }
 
 ];

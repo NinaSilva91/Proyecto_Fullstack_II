@@ -1,14 +1,3 @@
-/* =========================================================
-   main.js
-   Funciones COMPARTIDAS por todas las páginas (por eso va
-   aparte de productos.js y carrito.js: evita repetir código
-   y es más fácil de explicar en la defensa individual).
-
-   Acá vive todo lo que toca LocalStorage, porque la pauta
-   pide manejar el carrito con LocalStorage y con un arreglo
-   de productos en JavaScript.
-   ========================================================= */
-
 // Clave fija con la que guardamos el carrito en LocalStorage.
 // Usar una constante evita errores de tipeo si la escribimos
 // distinto en dos archivos.

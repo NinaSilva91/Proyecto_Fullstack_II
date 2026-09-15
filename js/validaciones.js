@@ -1,25 +1,4 @@
-/* =========================================================
-   validaciones.js
-   Acá viven TODAS las validaciones de formularios controladas
-   por JavaScript que pide la rúbrica (IE1.2.1 e IE1.2.2):
-   - Login
-   - Contacto
-   - Registro
-
-   Idea general:
-   1. Cada campo tiene un <span class="mensaje-error"> al lado,
-      pensado para mostrar el error JUSTO donde ocurre (no un
-      alert() genérico).
-   2. Antes de enviar (evento "submit") revisamos TODOS los
-      campos. Si hay algún error, hacemos preventDefault()
-      para que el formulario NO se envíe con datos malos.
-   3. Los dominios de correo permitidos (@duoc.cl,
-      @profesor.duoc.cl y @gmail.com) están definidos una sola
-      vez en DOMINIOS_PERMITIDOS para no repetir el arreglo en
-      cada validación. */
-
-const DOMINIOS_PERMITIDOS = ["duocuc.cl", "profesor.duoc.cl", "gmail.com"];
-
+/* validaciones.js */
 /**
  * Muestra un mensaje de error debajo del campo indicado y le
  * agrega la clase "error" al contenedor .campo (así el CSS le
@@ -60,12 +39,10 @@ function validarFormatoCorreo(correo) {
   return "";
 }
 
-/* =========================================================
-   LOGIN
+/* LOGIN
    Reglas oficiales:
    - Correo: requerido, máximo 100 caracteres, dominio permitido.
-   - Contraseña: requerida, entre 4 y 10 caracteres.
-   ========================================================= */
+   - Contraseña: requerida, entre 4 y 10 caracteres.*/
 function inicializarValidacionLogin() {
   const formulario = document.getElementById("form-login");
   if (!formulario) return;
@@ -129,13 +106,12 @@ if (formularioValido) {
   });
 }
 
-/* =========================================================
-   CONTACTO
+/* CONTACTO
    Reglas oficiales:
    - Nombre: requerido, máximo 100 caracteres.
    - Correo: máximo 100 caracteres, dominio permitido.
-   - Comentario: requerido, máximo 500 caracteres.
-   ========================================================= */
+   - Comentario: requerido, máximo 500 caracteres. */
+
 function inicializarValidacionContacto() {
   const formulario = document.getElementById("form-contacto");
   if (!formulario) return;
@@ -210,7 +186,7 @@ function inicializarValidacionContacto() {
 
 /* =========================================================
    REGISTRO
-   La pauta oficial pide revisar RUN, nombre, apellidos, correo,
+   La pauta oficial nos pide revisar RUN, nombre, apellidos, correo,
    fecha de nacimiento, tipo de usuario, región, comuna y
    dirección, pero no detalla el largo/formato exacto de cada
    uno. Las reglas de abajo son una RECOMENDACIÓN razonable
@@ -380,8 +356,7 @@ if (campoRun && ayudaRun) {
       mostrarError("registro-fecha", "Selecciona tu fecha de nacimiento.");
       formularioValido = false;
     } else {
-      // Edad mínima 13 años (RECOMENDACIÓN, no exigida en el
-      // documento oficial, pero razonable para una tienda online).
+      // Edad mínima 13 años 
       const hoy = new Date();
       const nacimiento = new Date(fechaNacimiento);
       let edad = hoy.getFullYear() - nacimiento.getFullYear();
@@ -438,9 +413,7 @@ if (campoRun && ayudaRun) {
   });
 }
 
-// Cada función revisa si "su" formulario existe en la página
-// actual antes de hacer algo, así este mismo archivo se puede
-// enlazar en todas las páginas sin generar errores.
+// Inicializamos todas las validaciones cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
   inicializarValidacionLogin();
   inicializarValidacionContacto();
