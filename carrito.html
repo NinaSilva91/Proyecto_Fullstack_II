@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito | Secret Sweet Maid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="row">
+
+    <header class="col-2">
+      <nav class="menu-principal">
+        <h1 class="logo-nombre">Secret Sweet Maid</h1>
+        <ul class="menu-lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html" class="activo">Carrito <span id="contador-carrito" class="contador-carrito">0</span></a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Registrarme</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="col-10 contenido-principal">
+      <section id="carrito">
+        <h2>Tu carrito</h2>
+
+        <p id="carrito-vacio" style="display:none;">
+          Tu carrito está vacío. <a href="productos.html">Ir al catálogo</a>.
+        </p>
+
+        <table class="tabla-carrito">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio unitario</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <!-- carrito.js llena este <tbody> leyendo LocalStorage -->
+          <tbody id="cuerpo-carrito"></tbody>
+        </table>
+
+        <p id="total-carrito" class="total-carrito">Total: $0</p>
+      </section>
+
+      <footer>
+        <p>Secret Sweet Maid &copy; 2026 · <a href="contacto.html">Contáctanos</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

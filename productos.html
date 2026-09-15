@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Productos | Secret Sweet Maid</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="row">
+
+    <!-- MENÚ PRINCIPAL-->
+
+    <header class="col-2">
+
+      <nav class="menu-principal">
+
+        <h1 class="logo-nombre">
+          Secret Sweet Maid
+        </h1>
+
+        <ul class="menu-lista">
+
+          <li>
+            <a href="index.html">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="productos.html" class="activo">
+              Productos
+            </a>
+          </li>
+
+          <li>
+            <a href="carrito.html">
+              Carrito
+              <span
+                id="contador-carrito"
+                class="contador-carrito"
+              >0</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="login.html">
+              Iniciar sesión
+            </a>
+          </li>
+
+          <li>
+            <a href="registro.html">
+              Registrarme
+            </a>
+          </li>
+
+          <li>
+            <a href="contacto.html">
+              Contacto
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="col-10 contenido-principal">
+
+      <section id="catalogo">
+
+        <h2>
+          Nuestra Merch
+        </h2>
+
+        <p>
+          Encuentra productos inspirados en nuestras maids
+          y en Secret Sweet Maid.
+        </p>
+
+
+        <!-- FILTRO POR MAID -->
+
+        <div class="filtros">
+
+          <label for="filtro-categoria">
+            Ver merch de:
+          </label>
+
+          <select id="filtro-categoria">
+
+            <option value="todas">
+              Todas
+            </option>
+
+            <option value="shikku">
+              Shikku
+            </option>
+
+            <option value="fumi">
+              Fumi
+            </option>
+
+            <option value="michiru">
+              Michiru
+            </option>
+
+            <option value="bekyuu">
+              Bekyuu
+            </option>
+
+            <option value="ritsu">
+              Ritsu
+            </option>
+
+            <option value="aimi">
+              Aimi
+            </option>
+
+            <option value="grupal">
+              Secret Sweet Maid
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- LISTA DE PRODUCTOS
+
+             JavaScript genera las tarjetas aquí.-->
+
+        <div
+          class="row"
+          id="lista-productos"
+        ></div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer>
+
+        <p>
+          Secret Sweet Maid &copy; 2026 ·
+          <a href="contacto.html">
+            Contáctanos
+          </a>
+        </p>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="js/main.js"></script>
+
+  <script src="js/productos.js"></script>
+
+</body>
+
+</html>

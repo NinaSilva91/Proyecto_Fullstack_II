@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Secret Sweet Maid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="row">
+
+    <header class="col-2">
+      <nav class="menu-principal">
+        <h1 class="logo-nombre">Secret Sweet Maid</h1>
+        <ul class="menu-lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="carrito.html">Carrito <span id="contador-carrito" class="contador-carrito">0</span></a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Registrarme</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="col-10 contenido-principal">
+      <section id="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Dudas con tu pedido o quieres proponernos un producto? Escríbenos.</p>
+
+        <p id="mensaje-contacto" class="mensaje-formulario" style="display:none;"></p>
+
+        <form id="form-contacto" class="form-tienda" novalidate>
+
+          <div class="campo">
+            <label for="contacto-nombre">Nombre</label>
+            <input type="text" id="contacto-nombre" name="nombre"
+                   autocomplete="name" maxlength="100">
+            <span id="error-contacto-nombre" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="contacto-correo">Correo electrónico</label>
+            <input type="email" id="contacto-correo" name="correo"
+                   autocomplete="email" maxlength="100"
+                   placeholder="nombre@duoc.cl">
+            <span id="error-contacto-correo" class="mensaje-error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="contacto-comentario">Comentario</label>
+            <textarea id="contacto-comentario" name="comentario"
+                      rows="5" maxlength="500"></textarea>
+            <span id="contador-comentario" class="contador-caracteres">0/500</span>
+            <span id="error-contacto-comentario" class="mensaje-error"></span>
+          </div>
+
+          <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        </form>
+      </section>
+
+      <footer>
+        <p>Secret Sweet Maid &copy; 2026</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script>
+    document.getElementById("form-contacto").addEventListener("submit", () => {
+      document.getElementById("mensaje-contacto").style.display = "block";
+    });
+  </script>
+</body>
+</html>
