@@ -39,9 +39,9 @@
                     type="text"
                     id="registro-run"
                     name="run"
-                    placeholder="Ej: 19011022K"
+                    placeholder="Ej: 19.011.022-K"
+                    maxlength="12"
                   >
-
                   <small id="ayuda-run" class="ayuda-campo">
                     Ingresa tu RUN sin puntos ni guion.
                   </small>
@@ -118,7 +118,13 @@
             <span id="error-registro-direccion" class="mensaje-error"></span>
           </div>
 
-          <button type="submit" class="btn-enviar">Crear cuenta</button>
+          <div style="display: flex; align-items: center; gap: 15px;"> 
+            <button type="submit" class="btn-enviar" style="display: flexbox;">Crear cuenta</button>
+            <p style="margin: 0;">
+              ¿Ya tienes cuenta? 
+              <a href="login.html" style="color: #d63384">Inicia sesión</a>
+        </p>
+          </div>
         </form>
       </section>
 

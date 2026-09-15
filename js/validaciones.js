@@ -254,6 +254,44 @@ function validarRun(runCompleto) {
 
   return dv === dvEsperado;
 }
+/*
+esto permite que no se coloquen otros carateres que no sea numero
+ni la letra K, ademas, con el input y el listener genera que se 
+haga una revision de numero por numero para dar una "idea" de que 
+se actualiza en tiempo real, se colocan el punto y guion solo. 
+debe estar fuera de los function para que funcione
+*/
+const format_run = document.getElementById("registro-run");
+
+format_run.addEventListener("input", (evento) => {
+    // Borra o impide cualquiera lo que no sea numero o K
+    let cara_val = evento.target.value.replace(/[^0-9kK]/g, "").toUpperCase();
+
+    //agrega, elimina u organiza los puntos y el guion mientras se escribe
+    let valor = cara_val.replace(/[\.-]/g, "");
+    if (valor === "") {
+        evento.target.value = "";
+        return;
+    }
+
+    let run = valor.slice(0, -1); //toma los numeros principales quitando el dv
+    let dv = valor.slice(-1); //deja solo el dv
+
+    let run_formato = "";
+    if (run.length > 3 && run.length <= 6) {//hace que se vayan asignado los puntos
+        run_formato = run.slice(0, -3) + "." + run.slice(-3);
+    } else if (run.length > 6) {
+        run_formato = run.slice(0, -6) + "." + run.slice(-6, -3) + "." + run.slice(-3);
+    } else {
+        run_formato = run;
+    }
+
+    if (valor.length > 1) {//toma el numero completo y concatena con dv
+        evento.target.value = run_formato + "-" + dv;
+    } else {
+        evento.target.value = valor;
+    }
+});
 
 function inicializarSelectRegionComuna() {
   const selectRegion = document.getElementById("registro-region");
