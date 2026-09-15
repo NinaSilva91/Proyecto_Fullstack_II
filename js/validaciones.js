@@ -322,7 +322,7 @@ if (campoRun && ayudaRun) {
     const direccion = document.getElementById("registro-direccion").value.trim();
 
     if (run === "" || !validarRun(run)) {
-      mostrarError("registro-run", "Ingresa un RUN válido (ej: 12345678-9).");
+      mostrarError("registro-run", "Ingresa un RUN válido (ej: 12.345.678-9).");
       formularioValido = false;
     } else {
       limpiarError("registro-run");
