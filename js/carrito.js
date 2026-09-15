@@ -1,9 +1,5 @@
 /* =========================================================
    carrito.js
-   Solo se usa en carrito.html. Se encarga de DIBUJAR el
-   carrito que vive en LocalStorage (leído a través de las
-   funciones que están en main.js) y de reaccionar cuando
-   el usuario cambia cantidades o elimina productos.
    ========================================================= */
 
 function renderizarCarrito() {

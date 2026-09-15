@@ -1,26 +1,4 @@
-/* =========================================================
-   validaciones.js
-   Acá viven TODAS las validaciones de formularios controladas
-   por JavaScript que pide la rúbrica (IE1.2.1 e IE1.2.2):
-   - Login
-   - Contacto
-   - Registro
-
-   Idea general (para explicarla al profesor):
-   1. Cada campo tiene un <span class="mensaje-error"> al lado,
-      pensado para mostrar el error JUSTO donde ocurre (no un
-      alert() genérico).
-   2. Antes de enviar (evento "submit") revisamos TODOS los
-      campos. Si hay algún error, hacemos preventDefault()
-      para que el formulario NO se envíe con datos malos.
-   3. Los dominios de correo permitidos (@duoc.cl,
-      @profesor.duoc.cl y @gmail.com) están definidos una sola
-      vez en DOMINIOS_PERMITIDOS para no repetir el arreglo en
-      cada validación.
-   ========================================================= */
-
-const DOMINIOS_PERMITIDOS = ["duoc.cl", "profesor.duoc.cl", "gmail.com"];
-
+/* validaciones.js */
 /**
  * Muestra un mensaje de error debajo del campo indicado y le
  * agrega la clase "error" al contenedor .campo (así el CSS le
@@ -61,12 +39,10 @@ function validarFormatoCorreo(correo) {
   return "";
 }
 
-/* =========================================================
-   LOGIN
+/* LOGIN
    Reglas oficiales:
    - Correo: requerido, máximo 100 caracteres, dominio permitido.
-   - Contraseña: requerida, entre 4 y 10 caracteres.
-   ========================================================= */
+   - Contraseña: requerida, entre 4 y 10 caracteres.*/
 function inicializarValidacionLogin() {
   const formulario = document.getElementById("form-login");
   if (!formulario) return;
@@ -107,25 +83,35 @@ function inicializarValidacionLogin() {
     }
 
     const mensajeFormulario = document.getElementById("mensaje-login");
-    if (formularioValido) {
-      // No hay backend real: simulamos el "inicio de sesión"
-      // guardando el nombre de usuario para la sesión de la demo.
-      mensajeFormulario.textContent = "¡Bienvenida/o! Inicio de sesión exitoso.";
-      mensajeFormulario.className = "mensaje-formulario exito";
-    } else {
-      mensajeFormulario.textContent = "Revisa los campos marcados en rojo.";
-      mensajeFormulario.className = "mensaje-formulario fallo";
-    }
+
+if (formularioValido) {
+
+  mensajeFormulario.textContent =
+    "¡Bienvenida/o! Inicio de sesión exitoso.";
+
+  mensajeFormulario.className =
+    "mensaje-formulario exito";
+
+  // Enviamos los datos válidos a login.js
+  procesarLogin(correo, clave);
+
+} else {
+
+  mensajeFormulario.textContent =
+    "Revisa los campos marcados en rojo.";
+
+  mensajeFormulario.className =
+    "mensaje-formulario fallo";
+}
   });
 }
 
-/* =========================================================
-   CONTACTO
+/* CONTACTO
    Reglas oficiales:
    - Nombre: requerido, máximo 100 caracteres.
    - Correo: máximo 100 caracteres, dominio permitido.
-   - Comentario: requerido, máximo 500 caracteres.
-   ========================================================= */
+   - Comentario: requerido, máximo 500 caracteres. */
+
 function inicializarValidacionContacto() {
   const formulario = document.getElementById("form-contacto");
   if (!formulario) return;
@@ -200,7 +186,7 @@ function inicializarValidacionContacto() {
 
 /* =========================================================
    REGISTRO
-   La pauta oficial pide revisar RUN, nombre, apellidos, correo,
+   La pauta oficial nos pide revisar RUN, nombre, apellidos, correo,
    fecha de nacimiento, tipo de usuario, región, comuna y
    dirección, pero no detalla el largo/formato exacto de cada
    uno. Las reglas de abajo son una RECOMENDACIÓN razonable
@@ -244,6 +230,44 @@ function validarRun(runCompleto) {
 
   return dv === dvEsperado;
 }
+/*
+esto permite que no se coloquen otros carateres que no sea numero
+ni la letra K, ademas, con el input y el listener genera que se 
+haga una revision de numero por numero para dar una "idea" de que 
+se actualiza en tiempo real, se colocan el punto y guion solo. 
+debe estar fuera de los function para que funcione
+*/
+const format_run = document.getElementById("registro-run");
+
+format_run.addEventListener("input", (evento) => {
+    // Borra o impide cualquiera lo que no sea numero o K
+    let cara_val = evento.target.value.replace(/[^0-9kK]/g, "").toUpperCase();
+
+    //agrega, elimina u organiza los puntos y el guion mientras se escribe
+    let valor = cara_val.replace(/[\.-]/g, "");
+    if (valor === "") {
+        evento.target.value = "";
+        return;
+    }
+
+    let run = valor.slice(0, -1); //toma los numeros principales quitando el dv
+    let dv = valor.slice(-1); //deja solo el dv
+
+    let run_formato = "";
+    if (run.length > 3 && run.length <= 6) {//hace que se vayan asignado los puntos
+        run_formato = run.slice(0, -3) + "." + run.slice(-3);
+    } else if (run.length > 6) {
+        run_formato = run.slice(0, -6) + "." + run.slice(-6, -3) + "." + run.slice(-3);
+    } else {
+        run_formato = run;
+    }
+
+    if (valor.length > 1) {//toma el numero completo y concatena con dv
+        evento.target.value = run_formato + "-" + dv;
+    } else {
+        evento.target.value = valor;
+    }
+});
 
 function inicializarSelectRegionComuna() {
   const selectRegion = document.getElementById("registro-region");
@@ -266,6 +290,21 @@ function inicializarValidacionRegistro() {
   const formulario = document.getElementById("form-registro");
   if (!formulario) return;
 
+  const campoRun = document.getElementById("registro-run");
+const ayudaRun = document.getElementById("ayuda-run");
+
+if (campoRun && ayudaRun) {
+
+  campoRun.addEventListener("focus", () => {
+    ayudaRun.classList.add("visible");
+  });
+
+  campoRun.addEventListener("blur", () => {
+    ayudaRun.classList.remove("visible");
+  });
+  
+}
+
   inicializarSelectRegionComuna();
 
   formulario.addEventListener("submit", (evento) => {
@@ -283,7 +322,7 @@ function inicializarValidacionRegistro() {
     const direccion = document.getElementById("registro-direccion").value.trim();
 
     if (run === "" || !validarRun(run)) {
-      mostrarError("registro-run", "Ingresa un RUN válido (ej: 12345678-9).");
+      mostrarError("registro-run", "Ingresa un RUN válido (ej: 12.345.678-9).");
       formularioValido = false;
     } else {
       limpiarError("registro-run");
@@ -317,8 +356,7 @@ function inicializarValidacionRegistro() {
       mostrarError("registro-fecha", "Selecciona tu fecha de nacimiento.");
       formularioValido = false;
     } else {
-      // Edad mínima 13 años (RECOMENDACIÓN, no exigida en el
-      // documento oficial, pero razonable para una tienda online).
+      // Edad mínima 13 años 
       const hoy = new Date();
       const nacimiento = new Date(fechaNacimiento);
       let edad = hoy.getFullYear() - nacimiento.getFullYear();
@@ -375,9 +413,7 @@ function inicializarValidacionRegistro() {
   });
 }
 
-// Cada función revisa si "su" formulario existe en la página
-// actual antes de hacer algo, así este mismo archivo se puede
-// enlazar en todas las páginas sin generar errores.
+// Inicializamos todas las validaciones cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
   inicializarValidacionLogin();
   inicializarValidacionContacto();

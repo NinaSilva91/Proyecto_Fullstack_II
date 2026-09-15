@@ -68,14 +68,7 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/validaciones.js"></script>
-  <script>
-    // Truco simple: cuando validaciones.js pone texto en el mensaje,
-    // este mismo script lo hace visible (estaba display:none al cargar
-    // para no mostrar un cuadro vacío antes de intentar enviar).
-    document.getElementById("form-login").addEventListener("submit", () => {
-      document.getElementById("mensaje-login").style.display = "block";
-    });
-  </script>
 </body>
 </html>

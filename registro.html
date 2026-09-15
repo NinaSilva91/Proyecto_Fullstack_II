@@ -33,11 +33,23 @@
         <form id="form-registro" class="form-tienda" novalidate style="max-width:600px;">
 
           <div class="campo">
-            <label for="registro-run">RUN</label>
-            <input type="text" id="registro-run" name="run"
-                   placeholder="12345678-9" maxlength="10">
-            <span id="error-registro-run" class="mensaje-error"></span>
-          </div>
+                <label for="registro-run">RUN</label>
+                <div class="campo">
+                  <input
+                    type="text"
+                    id="registro-run"
+                    name="run"
+                    placeholder="Ej: 19.011.022-K"
+                    maxlength="12"
+                  >
+                  <small id="ayuda-run" class="ayuda-campo">
+                    Ingresa tu RUN sin puntos ni guion.
+                  </small>
+
+                  <span id="error-registro-run" class="mensaje-error"></span>
+                </div>
+
+                
 
           <div class="campo">
             <label for="registro-nombre">Nombre</label>
@@ -106,7 +118,13 @@
             <span id="error-registro-direccion" class="mensaje-error"></span>
           </div>
 
-          <button type="submit" class="btn-enviar">Crear cuenta</button>
+          <div style="display: flex; align-items: center; gap: 15px;"> 
+            <button type="submit" class="btn-enviar" style="display: flexbox;">Crear cuenta</button>
+            <p style="margin: 0;">
+              ¿Ya tienes cuenta? 
+              <a href="login.html" style="color: #d63384">Inicia sesión</a>
+        </p>
+          </div>
         </form>
       </section>
 

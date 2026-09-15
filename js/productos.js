@@ -1,79 +1,357 @@
-/* =========================================================
-   productos.js
-   Acá vive el "arreglo de productos" que pide la pauta.
-   En un proyecto real esto vendría de una base de datos,
-   pero para esta evaluación (solo frontend) los productos
-   viven directamente en JavaScript, como un arreglo de
-   objetos.
-
-   Cada producto respeta los campos que pide el profesor:
-   código, nombre, descripción, precio, stock, stock crítico,
-   categoría e imagen.
-   ========================================================= */
-
 const productos = [
-  {
-    codigo: "P001",
-    nombre: "Diadema Maid Clásica",
-    descripcion: "Diadema blanca con encaje, básica para cualquier outfit maid.",
-    precio: 6990,
-    stock: 15,
-    stockCritico: 5,
-    categoria: "accesorios",
-    imagen: "imgs/producto1.jpg",
-  },
-  {
-    codigo: "P002",
-    nombre: "Delantal Sweet Lolita",
-    descripcion: "Delantal rosado con moños, inspirado en cafés maid japoneses.",
-    precio: 12990,
-    stock: 4,
-    stockCritico: 5,
-    categoria: "vestuario",
-    imagen: "imgs/producto2.jpg",
-  },
-  {
-    codigo: "P003",
-    nombre: "Medias Altas Kawaii",
-    descripcion: "Medias sobre la rodilla, algodón suave, varios colores pastel.",
-    precio: 5990,
-    stock: 20,
-    stockCritico: 8,
-    categoria: "vestuario",
-    imagen: "imgs/producto3.jpg",
-  },
-  {
-    codigo: "P004",
-    nombre: "Pin Coleccionable Bekyuu",
-    descripcion: "Pin metálico de la maid Bekyuu, edición limitada de temporada.",
-    precio: 3990,
-    stock: 2,
-    stockCritico: 5,
-    categoria: "coleccionables",
-    imagen: "imgs/producto4.jpg",
-  },
-  {
-    codigo: "P005",
-    nombre: "Taza Secret Sweet Maid",
-    descripcion: "Taza de cerámica con el logo de la comunidad, apta microondas.",
-    precio: 7990,
-    stock: 10,
-    stockCritico: 4,
-    categoria: "coleccionables",
-    imagen: "imgs/producto5.jpg",
-  },
-  {
-    codigo: "P006",
-    nombre: "Guantes de Encaje",
-    descripcion: "Guantes cortos de encaje blanco, complemento de uniforme maid.",
-    precio: 4990,
-    stock: 12,
-    stockCritico: 5,
-    categoria: "accesorios",
-    imagen: "imgs/producto6.jpg",
-  },
-];
 
+    // ==================================================
+    // SHIKKU
+    // ==================================================
+
+    {
+        codigo: "SHI001",
+        nombre: "Sticker Shikku",
+        descripcion: "Sticker de Shikku de Secret Sweet Maid.",
+        precio: 300,
+        stock: 10,
+        categoria: "shikku",
+        tipo: "sticker",
+        imagen: "imgs/shikku.png" 
+    },
+
+    {
+        codigo: "SHI002",
+        nombre: "Sticker XL Shikku",
+        descripcion: "Sticker XL de Shikku.",
+        precio: 1000,
+        stock: 10,
+        categoria: "shikku",
+        tipo: "sticker-xl",
+        imagen: "imgs/shikkuXL.png"
+    },
+
+    {
+        codigo: "SHI003",
+        nombre: "Photocard Shikku",
+        descripcion: "Photocard de Shikku.",
+        precio: 1000,
+        stock: 10,
+        categoria: "shikku",
+        tipo: "photocard",
+        imagen: "imgs/photocardShikku.JPG"
+    },
+
+    {
+        codigo: "SHI004",
+        nombre: "Chapita Shikku",
+        descripcion: "Chapita de Shikku.",
+        precio: 1000,
+        stock: 10,
+        categoria: "shikku",
+        tipo: "chapita",
+        imagen: "imgs/chapaShikku.png" 
+    },
+
+
+    // ==================================================
+    // FUMI
+    // ==================================================
+
+    {
+        codigo: "FUM001",
+        nombre: "Sticker Fumi",
+        descripcion: "Sticker de Fumi de Secret Sweet Maid.",
+        precio: 300,
+        stock: 10,
+        categoria: "fumi",
+        tipo: "sticker",
+        imagen: "imgs/fumi.png"
+    },
+
+    {
+        codigo: "FUM002",
+        nombre: "Sticker XL Fumi",
+        descripcion: "Sticker XL de Fumi.",
+        precio: 1000,
+        stock: 10,
+        categoria: "fumi",
+        tipo: "sticker-xl",
+        imagen: "imgs/fumiXL.png"
+    },
+
+    {
+        codigo: "FUM003",
+        nombre: "Photocard Fumi",
+        descripcion: "Photocard de Fumi.",
+        precio: 1000,
+        stock: 10,
+        categoria: "fumi",
+        tipo: "photocard",
+        imagen: "imgs/photocardFumi.JPG" // IMAGEN: photocard de Fumi
+    },
+
+    {
+        codigo: "FUM004",
+        nombre: "Chapita Fumi",
+        descripcion: "Chapita de Fumi.",
+        precio: 1000,
+        stock: 10,
+        categoria: "fumi",
+        tipo: "chapita",
+        imagen: "imgs/chapaFumi.png"
+    },
+
+
+    // ==================================================
+    // MICHIRU
+    // ==================================================
+
+    {
+        codigo: "MIC001",
+        nombre: "Sticker Michiru",
+        descripcion: "Sticker de Michiru.",
+        precio: 300,
+        stock: 10,
+        categoria: "michiru",
+        tipo: "sticker",
+        imagen: "imgs/michiru.png"
+    },
+
+    {
+        codigo: "MIC002",
+        nombre: "Sticker XL Michiru",
+        descripcion: "Sticker XL de Michiru.",
+        precio: 1000,
+        stock: 10,
+        categoria: "michiru",
+        tipo: "sticker-xl",
+        imagen: "imgs/michiruXL.png" 
+    },
+
+    {
+        codigo: "MIC003",
+        nombre: "Photocard Michiru",
+        descripcion: "Photocard de Michiru.",
+        precio: 1000,
+        stock: 10,
+        categoria: "michiru",
+        tipo: "photocard",
+        imagen: "imgs/photocardMichiru.JPG" 
+    },
+
+    {
+        codigo: "MIC004",
+        nombre: "Chapita Michiru",
+        descripcion: "Chapita de Michiru.",
+        precio: 1000,
+        stock: 10,
+        categoria: "michiru",
+        tipo: "chapita",
+        imagen: "imgs/chapaMichiru.png" 
+    },
+
+
+    // ==================================================
+    // BEKYUU
+    // ==================================================
+
+    {
+        codigo: "BEK001",
+        nombre: "Sticker Bekyuu",
+        descripcion: "Sticker de Bekyuu.",
+        precio: 300,
+        stock: 10,
+        categoria: "bekyuu",
+        tipo: "sticker",
+        imagen: "imgs/bekyuu.png" 
+    },
+
+    {
+        codigo: "BEK002",
+        nombre: "Sticker XL Bekyuu",
+        descripcion: "Sticker XL de Bekyuu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "bekyuu",
+        tipo: "sticker-xl",
+        imagen: "imgs/bekyuuXL.png" 
+    },
+
+    {
+        codigo: "BEK003",
+        nombre: "Photocard Bekyuu",
+        descripcion: "Photocard de Bekyuu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "bekyuu",
+        tipo: "photocard",
+        imagen: "imgs/photocardBekyuu.JPG" 
+    },
+
+    {
+        codigo: "BEK004",
+        nombre: "Chapita Bekyuu",
+        descripcion: "Chapita de Bekyuu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "bekyuu",
+        tipo: "chapita",
+        imagen: "imgs/chapaBekyuu.png"},
+
+    // ==================================================
+    // RITSU
+    // ==================================================
+
+    {
+        codigo: "RIT001",
+        nombre: "Sticker Ritsu",
+        descripcion: "Sticker de Ritsu.",
+        precio: 300,
+        stock: 10,
+        categoria: "ritsu",
+        tipo: "sticker",
+        imagen: "imgs/ritsu.png" 
+    },
+
+    {
+        codigo: "RIT002",
+        nombre: "Sticker XL Ritsu",
+        descripcion: "Sticker XL de Ritsu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "ritsu",
+        tipo: "sticker-xl",
+        imagen: "imgs/ritsuXL.png" 
+    },
+
+    {
+        codigo: "RIT003",
+        nombre: "Photocard Ritsu",
+        descripcion: "Photocard de Ritsu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "ritsu",
+        tipo: "photocard",
+        imagen: "imgs/photocardRitsu.JPG"
+    },
+
+    {
+        codigo: "RIT004",
+        nombre: "Chapita Ritsu",
+        descripcion: "Chapita de Ritsu.",
+        precio: 1000,
+        stock: 10,
+        categoria: "ritsu",
+        tipo: "chapita",
+        imagen: "imgs/chapaRitsu.png"
+    },
+
+
+    // ==================================================
+    // AIMI
+    // ==================================================
+
+    {
+        codigo: "AIM001",
+        nombre: "Sticker Aimi",
+        descripcion: "Sticker de Aimi.",
+        precio: 300,
+        stock: 10,
+        categoria: "aimi",
+        tipo: "sticker",
+        imagen: "imgs/aimi.png"
+    },
+
+    {
+        codigo: "AIM002",
+        nombre: "Sticker XL Aimi",
+        descripcion: "Sticker XL de Aimi.",
+        precio: 1000,
+        stock: 10,
+        categoria: "aimi",
+        tipo: "sticker-xl",
+        imagen: "imgs/aimiXL.png"
+    },
+
+    {
+        codigo: "AIM003",
+        nombre: "Photocard Aimi",
+        descripcion: "Photocard de Aimi.",
+        precio: 1000,
+        stock: 10,
+        categoria: "aimi",
+        tipo: "photocard",
+        imagen: "imgs/photocardAimi.JPG"
+    },
+
+    {
+    codigo: "AIM004",
+    nombre: "Chapita Aimi",
+    descripcion: "Chapita de Aimi.",
+    precio: 1000,
+    stock: 10,
+    categoria: "aimi",
+    tipo: "chapita",
+    imagen: "imgs/chapaAimi.png"
+    },
+
+
+    // ==================================================
+    // MERCH GENERAL SECRET SWEET MAID
+    // ==================================================
+
+    {
+        codigo: "SSM001",
+        nombre: "Llavero Secret Sweet Maid",
+        descripcion: "Llavero oficial de Secret Sweet Maid.",
+        precio: 3000,
+        stock: 10,
+        categoria: "grupal",
+        tipo: "llavero",
+        imagen: "imgs/llavero3D.png"
+    },
+
+    {
+        codigo: "SSM002",
+        nombre: "Gashapon",
+        descripcion: "Gashapon de Secret Sweet Maid.",
+        precio: 500,
+        stock: 10,
+        categoria: "grupal",
+        tipo: "gashapon",
+        imagen: "imgs/gashapon.png"
+    },
+
+    {
+        codigo: "SSM003",
+        nombre: "Bolsa sorpresa",
+        descripcion: "Bolsa sorpresa con productos de Secret Sweet Maid.",
+        precio: 2000,
+        stock: 10,
+        categoria: "grupal",
+        tipo: "bolsa",
+        imagen: "imgs/sobresSorpresa.png"
+    },
+
+    {
+        codigo: "SSM004",
+        nombre: "Cartas Pokemaid",
+        descripcion: "Cartas coleccionables Pokemaid.",
+        precio: 1000,
+        stock: 10,
+        categoria: "grupal",
+        tipo: "cartas",
+        imagen: "imgs/cartasPokemaid.png"
+    },
+
+    {
+        codigo: "SSM005",
+        nombre: "Separador de libro",
+        descripcion: "Separador de libro de Secret Sweet Maid.",
+        precio: 1000,
+        stock: 10,
+        categoria: "grupal",
+        tipo: "separador",
+        imagen: "imgs/marcaPaginas.png"
+    }
+
+];
 /**
  * Dibuja las tarjetas de productos dentro del contenedor
  * que recibamos, filtrando por categoría si corresponde.
